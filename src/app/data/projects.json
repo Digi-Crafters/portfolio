@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "TechNova E-Commerce Platform",
+    "description": "A full-featured e-commerce platform built with Next.js and Node.js, featuring real-time inventory tracking, secure payment processing, and a responsive admin dashboard. The platform includes advanced search functionalities and personalized product recommendations based on user behavior.",
+    "image": "/projects/ecommerce-platform.jpg",
+    "technologies": ["Next.js", "Node.js", "MongoDB", "Stripe", "Redux"],
+    "link": "https://technova-ecommerce.com",
+    "category": "Web Development",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "HealthTracker Mobile App",
+    "description": "A cross-platform mobile application for health tracking, built with React Native. Features include workout tracking, meal planning, progress visualization, and integration with wearable devices. The app uses machine learning to provide personalized health recommendations.",
+    "image": "/projects/health-tracker.jpg",
+    "technologies": ["React Native", "Firebase", "TensorFlow", "GraphQL"],
+    "link": "https://healthtracker-app.io",
+    "category": "Mobile Development",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Quantum Financial Dashboard",
+    "description": "An enterprise-grade financial analytics dashboard designed for investment firms. Built with Angular and D3.js, it visualizes complex financial data in real-time. Features include customizable widgets, predictive analysis tools, and regulatory compliance reporting.",
+    "image": "/projects/financial-dashboard.jpg",
+    "technologies": ["Angular", "D3.js", "TypeScript", "AWS", "PostgreSQL"],
+    "link": "https://quantum-finance.tech",
+    "category": "Web Development",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "EcoSmart Home System",
+    "description": "An IoT-based smart home solution focused on energy efficiency. The system includes a user-friendly mobile interface, real-time energy usage monitoring, and automated optimization routines. Integrates with major smart home devices and uses AI to learn user preferences.",
+    "image": "/projects/ecosmart-home.jpg",
+    "technologies": ["IoT", "Python", "Flutter", "TensorFlow", "MQTT"],
+    "link": "https://ecosmart-home.co",
+    "category": "IoT Solutions",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "ArtFusion Gallery Platform",
+    "description": "A virtual art gallery platform that allows artists to showcase their work in immersive 3D environments. Visitors can explore exhibitions, interact with artwork, and make purchases. Features include VR support, virtual tours, and blockchain-based artwork authentication.",
+    "image": "/projects/artfusion-gallery.jpg",
+    "technologies": ["Three.js", "WebGL", "React", "Ethereum", "WebVR"],
+    "link": "https://artfusion-gallery.com",
+    "category": "Interactive Media",
+    "featured": false
+  }
+]
