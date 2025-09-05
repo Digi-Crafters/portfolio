@@ -1,9 +1,0 @@
-<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="450" fill="#111111"/>
-  <path d="M400 225m-100 0a100 100 0 1 0 200 0a100 100 0 1 0 -200 0" fill="#1a1a1a" stroke="#e3f6fd" stroke-width="2"/>
-  <rect x="325" y="175" width="150" height="100" rx="5" stroke="#e3f6fd" stroke-width="2"/>
-  <path d="M375 200l-25 25h50l-25-25z" stroke="#e3f6fd" stroke-width="1.5" fill="none"/>
-  <path d="M425 200l-25 25h50l-25-25z" stroke="#e3f6fd" stroke-width="1.5" fill="none"/>
-  <path d="M400 225l-25 25h50l-25-25z" stroke="#e3f6fd" stroke-width="1.5" fill="none"/>
-  <circle cx="400" cy="245" r="15" stroke="#e3f6fd" stroke-width="1.5" fill="none"/>
-</svg>

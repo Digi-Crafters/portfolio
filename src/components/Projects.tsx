@@ -185,7 +185,7 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-10" />
                 <div className="absolute inset-0 bg-[#e3f6fd]/30 group-hover:opacity-0 transition-opacity duration-500" />
                 <Image
-                  src="/projects/placeholder.svg"
+                  src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover object-center"
@@ -233,7 +233,7 @@ const Projects = () => {
         </motion.div>
         
         {/* View All Projects Button */}
-        <motion.div 
+        {/* <motion.div 
           className="flex justify-center mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -250,7 +250,7 @@ const Projects = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </div>
           </motion.button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Project Modal */}
         <AnimatePresence>
@@ -283,12 +283,13 @@ const Projects = () => {
                 {/* Project details */}
                 {projectsData.filter(p => p.id === currentProject).map((project) => (
                   <div key={project.id} className="flex flex-col md:flex-row">
-                    <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+                    <div className="w-full md:w-1/2 flex items-center justify-center bg-black p-8">
                       <Image
-                        src="/projects/placeholder.svg"
+                        src={project.image}
                         alt={project.title}
-                        fill
-                        className="object-cover object-center"
+                        width={600}
+                        height={400}
+                        className="rounded-xl max-w-full h-auto object-contain bg-black"
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority
                       />
