@@ -65,14 +65,32 @@ const HeroSection = () => {
     },
   };
   const scrollToProjects = () => {
-  const projectsSection = document.getElementById('projects');
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
-  }
-};
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+  const openWhatsApp = () => {
+    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+    const message = encodeURIComponent(
+      "Hi! I'm interested in starting a project with Digi-Crafters. Can we discuss?"
+    );
+
+    if (phoneNumber) {
+      // WhatsApp Web/App URL format
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappURL, "_blank");
+    } else {
+      console.error("WhatsApp number not found in environment variables");
+      // Fallback - you could show an alert or redirect to contact form
+      alert(
+        "WhatsApp contact not available. Please contact us through other means."
+      );
+    }
+  };
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
@@ -239,20 +257,13 @@ const HeroSection = () => {
               className="group relative px-8 py-4 bg-gradient-to-r from-[#e3f6fd] to-white text-black font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#e3f6fd]/25"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={openWhatsApp} // Add this onClick handler
             >
               <motion.div className="absolute inset-0 bg-gradient-to-r from-[#e3f6fd] to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div
-                className="relative flex items-center gap-2 cursor-pointer"
-                onClick={() => {
-                  const number = process.env.NEXT_WHATSAPP_NUMBER;
-                  if (number) {
-                  window.open(`https://wa.me/${number}`, "_blank");
-                  }
-                }}
-                >
+              <div className="relative flex items-center gap-2">
                 Start Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
+              </div>
             </motion.button>
 
             <motion.button
@@ -326,10 +337,10 @@ const HeroSection = () => {
             variants={itemVariants}
           >
             {[
-              { number: "50+", label: "Projects Delivered" },
-              { number: "25+", label: "Happy Clients" },
-              { number: "3+", label: "Years Experience" },
-              { number: "24/7", label: "Support Available" },
+              { number: "5+", label: "Domains" },
+              { number: "10+", label: "Projects Served" },
+              { number: "100%", label: "Customisation" },
+              { number: "24*7", label: "Availability" },
             ].map((stat, index) => (
               <motion.div
                 key={index}

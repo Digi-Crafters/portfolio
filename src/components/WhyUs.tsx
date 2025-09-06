@@ -77,7 +77,24 @@ const WhyUs = () => {
       color: "from-[#e3f6fd] to-white"
     }
   ];
+  const openWhatsApp = () => {
+    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+    const message = encodeURIComponent(
+      "Hi! I'm interested in starting a project with Digi-Crafters. Can we discuss?"
+    );
 
+    if (phoneNumber) {
+      // WhatsApp Web/App URL format
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappURL, "_blank");
+    } else {
+      console.error("WhatsApp number not found in environment variables");
+      // Fallback - you could show an alert or redirect to contact form
+      alert(
+        "WhatsApp contact not available. Please contact us through other means."
+      );
+    }
+  };
   return (
     <section id="why-us" className="py-20 px-4 md:px-8 lg:px-16 bg-black text-white relative overflow-hidden">
       {/* Background elements */}
@@ -236,6 +253,7 @@ const WhyUs = () => {
             className="group relative px-8 py-4 bg-gradient-to-r from-[#e3f6fd] to-white text-black font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#e3f6fd]/25"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={openWhatsApp}
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-[#e3f6fd] to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
