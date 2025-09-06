@@ -164,6 +164,8 @@ const HeroSection = () => {
               <Sparkles className="w-4 h-4 text-[#b3e0f7]" />
             </div>
           </motion.div>
+          
+          
 
           {/* Main Title */}
           <motion.div className="text-center mb-12" variants={itemVariants}>
