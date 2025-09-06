@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import {
   Sparkles,
   Send,
-  Phone,
-  Mail,
   MapPin,
   MessageSquare,
   ExternalLink,
@@ -343,9 +341,8 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-medium mb-1">WhatsApp</h4>
-                    <p className="text-[#e3f6fd]">+1 (123) 456-7890</p>
                     <a
-                      href={`https://wa.me/${whatsappNumber}`}
+                      href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%20Digi-Crafters%2C%20I%27m%20interested%20in%20your%20services.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm flex items-center gap-1 text-[#b3e0f7] mt-1 hover:underline"
@@ -354,32 +351,18 @@ const ContactUs = () => {
                     </a>
                   </div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="p-3 bg-white/10 rounded-lg mr-4">
-                    <Phone className="w-5 h-5 text-[#e3f6fd]" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-medium mb-1">Phone</h4>
-                    <p className="text-[#e3f6fd]">+1 (123) 456-7890</p>
-                    <p className="text-sm text-[#e3f6fd]/70">
-                      Monday-Friday, 9AM-5PM EST
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="p-3 bg-white/10 rounded-lg mr-4">
                     <Mail className="w-5 h-5 text-[#e3f6fd]" />
-                  </div>
-                  <div>
+                  </div> */}
+                  {/* <div>
                     <h4 className="text-white font-medium mb-1">Email</h4>
                     <p className="text-[#e3f6fd]">contact@digicrafters.com</p>
                     <p className="text-sm text-[#e3f6fd]/70">
                       We&apos;ll respond within 24 hours
                     </p>
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
 
                 <div className="flex items-start">
                   <div className="p-3 bg-white/10 rounded-lg mr-4">
@@ -387,8 +370,8 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-medium mb-1">Office</h4>
-                    <p className="text-[#e3f6fd]">123 Digital Avenue</p>
-                    <p className="text-[#e3f6fd]">Tech City, TC 10101</p>
+                    <p className="text-[#e3f6fd]">Remote</p>
+                    <p className="text-[#e3f6fd]">India</p>
                   </div>
                 </div>
               </div>
