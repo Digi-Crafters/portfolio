@@ -28,5 +28,24 @@
     "link": "https://modern-gym-one.vercel.app/",
     "category": "Web Development",
     "featured": true
+  },{
+    "id": 4,
+    "title": "Mrs and Mr Cakewala",
+    "description": "A Bakery Website built with modern web technologies.",
+    "image": "/projects/cakewala.png",
+    "technologies": ["Next.js","Tailwind CSS","Framer Motion"],
+    "link": "https://mrs-and-mr-cakewala-test.vercel.app/",
+    "category": "Web Development",
+    "featured": false
+
+  },{
+    "id": 5,
+    "title": "Artisan Bakery",
+    "description": "A Bakery Website built with modern web technologies.",
+    "image": "/projects/bakery-3.png",
+    "technologies": ["Next.js","Tailwind CSS","Framer Motion"],
+    "link": "https://bakery-3-demo.vercel.app/                                                                                                                            ",
+    "category": "Web Development",
+    "featured": false
   }
-]
+]                                                                               
