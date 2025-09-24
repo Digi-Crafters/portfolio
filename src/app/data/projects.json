@@ -38,7 +38,18 @@
     "category": "Cafe/ Bakery",
     "featured": false
 
-  },{
+  },
+   {
+    "id": 7,
+    "title": "Jewelry Store",
+    "description": "A Jewelry Store Website built with modern web technologies.",
+    "image": "/projects/jewelry-store.png",
+    "technologies": ["Next.js","Tailwind CSS","Framer Motion"],
+    "link": "https://jewellery-one-sigma.vercel.app/",
+    "category": "Jewelry Store",
+    "featured": false
+  },
+  {
     "id": 5,
     "title": "Artisan Bakery",
     "description": "A Bakery Website built with modern web technologies.",
@@ -57,4 +68,5 @@
     "category": "Clothing Store",
     "featured": false
   }
+ 
 ]                                                                               

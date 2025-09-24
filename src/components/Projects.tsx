@@ -4,70 +4,9 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, Sparkles, Zap } from "lucide-react";
-
+import data from "../../src/app/data/projects.json"
 // Use the projects data directly instead of importing
-const projectsData = [
-  {
-    id: 1,
-    title: "Bean and Brew",
-    description: "A Bakery Website built with modern web technologies.",
-    image: "/projects/beanandbrew.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://bean-and-brew-test.vercel.app/",
-    category: "Cafe/ Bakery",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Modern Gym Website Black and White",
-    description: "A Gym Website built with modern web technologies.",
-    image: "/projects/blacandwhitegym.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://modern-gym-two-zeta.vercel.app/",
-    category: "Gym/ Fitness",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Modern Gym Website Colorful",
-    description: "A Gym Website built with modern web technologies.",
-    image: "/projects/gym-one.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://modern-gym-one.vercel.app/",
-    category: "Gym/ Fitness",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Mrs and Mr Cakewala",
-    description: "A Bakery Website built with modern web technologies.",
-    image: "/projects/cakewala.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://mrs-and-mr-cakewala-test.vercel.app/",
-    category: "Cafe/ Bakery",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Artisan Bakery",
-    description: "A Bakery Website built with modern web technologies.",
-    image: "/projects/bakery-3.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://bakery-3-demo.vercel.app/",
-    category: "Cafe/ Bakery",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "A-Z Clothing",
-    description: "A Clothing Store Website built with modern web technologies.",
-    image: "/projects/clothing-one.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "https://clothing-one-one.vercel.app",
-    category: "Clothing Store",
-    featured: false,
-  },
-];
+const projectsData=data;
 
 // Animation variants
 const containerVariants = {
