@@ -28,7 +28,8 @@
     "link": "https://salon-one-six.vercel.app/",
     "category": "Hair Salon",
     "featured": true
-  },{
+  },
+  {
     "id": 4,
     "title": "Mrs and Mr Cakewala",
     "description": "A Bakery Website built with modern web technologies.",
@@ -37,9 +38,8 @@
     "link": "https://mrs-and-mr-cakewala-test.vercel.app/",
     "category": "Cafe/ Bakery",
     "featured": false
-
   },
-   {
+  {
     "id": 7,
     "title": "Jewelry Store",
     "description": "A Jewelry Store Website built with modern web technologies.",
@@ -55,10 +55,11 @@
     "description": "A Bakery Website built with modern web technologies.",
     "image": "/projects/bakery-3.png",
     "technologies": ["Next.js","Tailwind CSS","Framer Motion"],
-    "link": "https://bakery-3-demo.vercel.app/                                                                                                                            ",
+    "link": "https://bakery-3-demo.vercel.app/",
     "category": "Cafe/ Bakery",
     "featured": false
-  },{
+  },
+  {
     "id": 6,
     "title": "A-Z Clothing",
     "description": "A Clothing Store Website built with modern web technologies.",
@@ -77,6 +78,35 @@
     "link": "https://modern-gym-one.vercel.app/",
     "category": "Gym/ Fitness",
     "featured": true
+  },
+  {
+    "id": 9,
+    "title": "Reflect Fashion",
+    "description": "A modern clothing brand website featuring the latest trends.",
+    "image": "/projects/reflect-fashion.png",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "link": "https://clothing-two-two.vercel.app/",
+    "category": "Clothing Store",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Saree & Ethnic Wear",
+    "description": "A vibrant website for sarees and ethnic wear collections.",
+    "image": "/projects/saree-ethnic.png",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "link": "https://saree-one-one.vercel.app/",
+    "category": "Ethnic Wear",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "title": "Hotel Grand Palace",
+    "description": "A luxury hotel website with booking and amenities showcase.",
+    "image": "/projects/hotel-one.png",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "link": "https://hotel-one-gray.vercel.app/",
+    "category": "Hotel",
+    "featured": false
   }
- 
-]                                                                               
+]

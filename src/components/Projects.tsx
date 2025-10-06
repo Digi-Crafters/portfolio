@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, ExternalLink, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, ExternalLink, Sparkles, Zap, ChevronLeft, ChevronRight } from "lucide-react";
 import data from "../../src/app/data/projects.json"
-// Use the projects data directly instead of importing
-const projectsData=data;
+
+const projectsData = data;
 
 // Animation variants
 const containerVariants = {
@@ -37,8 +37,25 @@ const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
   const [currentProject, setCurrentProject] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Extract unique categories - ensure we get the exact categories from the data
+  // Detect screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Projects per page based on screen size
+  const projectsPerPage = isMobile ? 3 : 6;
+
+  // Extract unique categories
   const categories = [
     "All",
     ...Array.from(new Set(projectsData.map((project) => project.category))),
@@ -52,10 +69,34 @@ const Projects = () => {
       const filtered = projectsData.filter((project) => {
         return project.category === activeCategory;
       });
-
       setFilteredProjects(filtered);
     }
+    // Reset to page 1 when category changes
+    setCurrentPage(1);
   }, [activeCategory]);
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const endIndex = startIndex + projectsPerPage;
+  const currentProjects = filteredProjects.slice(startIndex, endIndex);
+
+  // Handle page change
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      // Scroll to projects section
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      // Scroll to projects section
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   // Handle project click
   const openProjectModal = (projectId: number) => {
@@ -66,7 +107,7 @@ const Projects = () => {
   // Close project modal
   const closeProjectModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setCurrentProject(null), 300); // Delay to allow animation
+    setTimeout(() => setCurrentProject(null), 300);
   };
 
   return (
@@ -76,7 +117,6 @@ const Projects = () => {
     >
       {/* Background elements */}
       <div className="absolute inset-0">
-        {/* White gradients as orbs */}
         <motion.div
           className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
           animate={{
@@ -101,7 +141,6 @@ const Projects = () => {
             ease: "easeInOut",
           }}
         />
-        {/* Subtle blue orb */}
         <motion.div
           className="absolute top-1/3 right-1/3 w-64 h-64 bg-[#e3f6fd]/30 rounded-full blur-2xl"
           animate={{
@@ -178,15 +217,15 @@ const Projects = () => {
         {/* Projects Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory} // This key ensures re-animation when category changes
+            key={`${activeCategory}-${currentPage}`}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            {filteredProjects.length > 0 ? (
-              filteredProjects.map((project) => (
+            {currentProjects.length > 0 ? (
+              currentProjects.map((project) => (
                 <motion.div
                   key={project.id}
                   variants={itemVariants}
@@ -262,11 +301,53 @@ const Projects = () => {
           </motion.div>
         </AnimatePresence>
 
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <motion.div
+            className="flex items-center justify-center gap-4 mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <button
+              onClick={goToPreviousPage}
+              disabled={currentPage === 1}
+              className={`flex items-center gap-2 px-5 py-3 rounded-full border transition-all duration-300 ${
+                currentPage === 1
+                  ? "bg-white/5 border-white/10 text-white/30 cursor-not-allowed"
+                  : "bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30"
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+              <span className="hidden sm:inline">Previous</span>
+            </button>
+
+            <div className="flex items-center gap-2">
+              <span className="text-white/70 text-sm">
+                Page {currentPage} of {totalPages}
+              </span>
+            </div>
+
+            <button
+              onClick={goToNextPage}
+              disabled={currentPage === totalPages}
+              className={`flex items-center gap-2 px-5 py-3 rounded-full border transition-all duration-300 ${
+                currentPage === totalPages
+                  ? "bg-white/5 border-white/10 text-white/30 cursor-not-allowed"
+                  : "bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30"
+              }`}
+            >
+              <span className="hidden sm:inline">Next</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </motion.div>
+        )}
+
         {/* Project Modal */}
         <AnimatePresence>
           {isModalOpen && currentProject && (
             <motion.div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+              className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
