@@ -108,5 +108,16 @@
     "link": "https://hotel-one-gray.vercel.app/",
     "category": "Hotel",
     "featured": false
-  }
+  },
+  {
+  "id": 12,
+  "title": "Alok Enterprises",
+  "description": "A solar solutions company offering clean and sustainable energy systems in Uttar Pradesh.",
+  "image": "/projects/alok.png",
+  "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+  "link": "https://alok-enterprises.vercel.app/",
+  "category": "Other Buisnesses",
+  "featured": true
+}
+
 ]
