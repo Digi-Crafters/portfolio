@@ -4,7 +4,6 @@ import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import React from "react";
-
 const page = () => {
   return (
     <div>

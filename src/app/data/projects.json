@@ -70,6 +70,16 @@
     "featured": false
   },
   {
+    "id": 13,
+    "title": "Kashora",
+    "description": "Kashmir's Finest Handicrafts - A website showcasing exquisite handicrafts from Kashmir.",
+    "image": "/projects/kashora.png",
+    "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "link": "https://kashora.vercel.app/demo_two",
+    "category": "Ethnic Wear",
+    "featured": false
+  },
+  {
     "id": 8,
     "title": "Modern Gym Website Colorful",
     "description": "A Gym Website built with modern web technologies.",
