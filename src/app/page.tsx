@@ -1,7 +1,8 @@
 import ContactUs from "@/components/ContactUs";
 import Hero from "@/components/Hero";
+import Packages from "@/components/Packages";
 import Projects from "@/components/Projects";
-import Services from "@/components/Services";
+// import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
 import React from "react";
 const page = () => {
@@ -10,7 +11,8 @@ const page = () => {
       <Hero />
       <Projects />
       <WhyUs />
-      <Services />
+      <Packages />
+      {/* <Services /> */}
       <ContactUs />
     </div>
   );
