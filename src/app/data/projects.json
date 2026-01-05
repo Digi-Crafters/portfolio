@@ -128,6 +128,26 @@
   "link": "https://alok-enterprises.vercel.app/",
   "category": "Other Buisnesses",
   "featured": true
+},
+{
+  "id": 14,
+  "title": "Photographers Hub",
+  "description": "A photographers hub showcasing the work of talented photographers.",
+  "image": "/projects/photographers-hub.png",
+  "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+  "link": "https://photographer-one-one.vercel.app/",
+  "category": "Photography",
+  "featured": true
+},
+{
+  "id": 15,
+  "title": "Catering Service",
+  "description": "A catering service website showcasing delicious menus and services.",
+  "image": "/projects/catering.png",
+  "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+  "link": "https://digi-caterer.vercel.app/",
+  "category": "Catering",
+  "featured": false
 }
 
 ]
