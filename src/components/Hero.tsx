@@ -76,7 +76,7 @@ const HeroSection = () => {
   const openWhatsApp = () => {
     const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
     const message = encodeURIComponent(
-      "Hi! I'm interested in starting a project with Digi-Crafters. Can we discuss?"
+      "Hi! I'm interested in starting a project with Digi-Crafters. Can we discuss?",
     );
 
     if (phoneNumber) {
@@ -87,7 +87,7 @@ const HeroSection = () => {
       console.error("WhatsApp number not found in environment variables");
       // Fallback - you could show an alert or redirect to contact form
       alert(
-        "WhatsApp contact not available. Please contact us through other means."
+        "WhatsApp contact not available. Please contact us through other means.",
       );
     }
   };
@@ -186,26 +186,14 @@ const HeroSection = () => {
               <Sparkles className="w-4 h-4 text-[#b3e0f7]" />
             </div>
           </motion.div>
-          
-          
 
           {/* Main Title */}
           <motion.div className="text-center mb-12" variants={itemVariants}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-              <motion.span
-                className="inline-block bg-gradient-to-r from-white via-[#e3f6fd] to-white bg-clip-text text-transparent"
-                animate={{
-                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                style={{ backgroundSize: "200% 200%" }}
-              >
+              <span className="block">Web Development & Design Agency</span>
+              <span className="inline-block bg-gradient-to-r from-white via-[#e3f6fd] to-white bg-clip-text text-transparent">
                 Digi-Crafters
-              </motion.span>
+              </span>
             </h1>
 
             <motion.p
