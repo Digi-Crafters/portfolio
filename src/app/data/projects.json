@@ -148,6 +148,25 @@
   "link": "https://digi-caterer.vercel.app/",
   "category": "Catering",
   "featured": false
+},
+{
+  "id": 16,
+  "title": "Ghar 1964 Cafe on Shoja Himachal",
+  "description": "A beautiful cafe located in the scenic mountains of Shoja, Himachal.",
+  "image": "/projects/ghar1964.png",
+  "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+  "link": "https://ghar-1964-demo.vercel.app/",
+  "category": "Cafe/ Bakery",
+  "featured": false
+},
+{
+  "id": 17,
+  "title": "PG in Pune",
+  "description": "Modern and comfortable PG accommodation in Pune.",
+  "image": "/projects/pg-one.png",
+  "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+  "link": "https://pg-one-ochre.vercel.app/",
+  "category": "Other Buisnesses",
+  "featured": false
 }
-
 ]
